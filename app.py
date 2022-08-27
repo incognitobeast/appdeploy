@@ -2,7 +2,7 @@ import pickle
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 import numpy as np
 app = Flask(__name__)
-ml = pickle.load(open('ml.pkl','rb'))
+model = pickle.load(open('model.pkl','rb'))
 @app.route('/')
 def index():
     return render_template('index.html')
