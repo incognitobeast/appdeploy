@@ -11,7 +11,7 @@ def predict():
     try:
         features = [float(x) for x in request.form.values()]
         featuresnew = [np.array(features)]
-        prediction = regression.predict(featuresnew)
+        prediction = model.predict(featuresnew)
         output = round(prediction[0],2)
         return render_template('index.html', prediction_text=f'Approximate Price of the Property is {output}/')
     except:
